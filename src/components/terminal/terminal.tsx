@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
-import { achievements, name } from '@/lib/portfolio-data';
+import { achievements, name } from "@/lib/portfolio-data";
 
 import Welcome from "@/components/sections/welcome";
 import Help from "@/components/sections/help";
@@ -17,7 +17,7 @@ import CommandNotFound from "@/components/sections/command-not-found";
 import TerminalHeader from "./terminal-header";
 import CommandOutput from "./command-output";
 import { TypingEffect } from "../ui/typing-effect";
-import Achievements from '../sections/achievements';
+import Achievements from "../sections/achievements";
 
 type HistoryItem = {
 	id: number;
@@ -80,7 +80,7 @@ const Terminal = () => {
 					return <Experience />;
 				case "education":
 					return <Education />;
-				case 'achievements':
+				case "achievements":
 					if (achievements && achievements.length > 0) {
 						return <Achievements />;
 					}
@@ -214,7 +214,7 @@ const Terminal = () => {
 
 	return (
 		<div
-			className="w-full h-[calc(100vh-4rem)] md:h-[calc(100vh-6rem)] lg:h-[calc(100vh-8rem)] border-2 border-primary/30 rounded-none shadow-2xl shadow-primary/20 bg-background/80 backdrop-blur-sm flex flex-col"
+			className="w-full h-[calc(100vh-6rem)] md:h-[calc(100vh-6rem)] lg:h-[calc(100vh-8rem)] border-2 border-primary/30 rounded-none shadow-2xl shadow-primary/20 bg-background/80 backdrop-blur-sm flex flex-col"
 			onClick={handleTerminalClick}
 		>
 			<TerminalHeader />

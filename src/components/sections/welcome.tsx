@@ -1,18 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import asciiImage from "../../app/asciiImg.png";
 import { name } from "@/lib/portfolio-data";
 
 const Welcome = () => {
 	const [lastLogin, setLastLogin] = useState("");
-
-	const asciiArt = `
-███╗   ███╗ █████╗ ██╗  ██╗███████╗███████╗██╗  ██╗
-████╗ ████║██╔══██╗██║  ██║██╔════╝██╔════╝██║  ██║
-██╔████╔██║███████║███████║█████╗  ███████╗███████║
-██║╚██╔╝██║██╔══██║██╔══██║██╔══╝  ╚════██║██╔══██║
-██║ ╚═╝ ██║██║  ██║██║  ██║███████╗███████║██║  ██║
-╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
-`;
 
 	useEffect(() => {
 		// Generate a plausible-looking past date and random IP only on the client
@@ -28,15 +21,16 @@ const Welcome = () => {
 	return (
 		<div className="mb-4">
 			<p className="text-muted-foreground">{lastLogin}</p>
-			<pre
-				className="text-primary text-glow leading-tight mb-2 whitespace-pre break-words"
-				style={{
-					fontSize: "clamp(0.3rem, 2vw, 1rem)",
-					textSizeAdjust: "100%",
-				}}
-			>
-				{asciiArt}
-			</pre>
+			<div className="mb-2 w-full max-w-2xl">
+				<Image
+					src={asciiImage}
+					alt="MAHESH"
+					width={800}
+					height={200}
+					className="w-full h-auto"
+					priority
+				/>
+			</div>
 			<p>
 				Type{" "}
 				<code className="bg-primary/20 text-primary p-1 rounded-md">

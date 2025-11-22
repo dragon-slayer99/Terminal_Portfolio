@@ -1,29 +1,27 @@
 import React from 'react';
 import { experience } from '@/lib/portfolio-data';
+import { Briefcase } from 'lucide-react';
+import { Timeline } from '@/components/ui/timeline';
 
 const Experience = () => {
+  if (!experience || experience.length === 0) {
+    return null;
+  }
+
+  const timelineItems = experience.map(exp => ({
+    title: exp.role,
+    subtitle: exp.company,
+    date: exp.duration,
+    details: exp.responsibilities,
+  }));
+
   return (
     <div>
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-primary">[work]</span>
+        <Briefcase className="w-5 h-5 text-primary" />
         <h2 className="font-headline text-lg text-primary">Experience</h2>
       </div>
-      <div className="font-mono text-sm">
-        {experience.map((exp, index) => (
-          <div key={index} className="mb-4 pl-2">
-            <p><span className="text-primary">{exp.role}</span> @ {exp.company}</p>
-            <p className="pl-4"><span className="text-muted-foreground">{exp.duration}</span></p>
-            <ul className="pl-4">
-            {exp.responsibilities.map((detail, i) => (
-              <li key={i} className="flex">
-                <span className="mr-2 text-primary">-</span>
-                <span>{detail}</span>
-              </li>
-            ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <Timeline items={timelineItems} />
     </div>
   );
 };

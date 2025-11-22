@@ -100,9 +100,24 @@
   }
 }
 
+/* Custom font for ASCII art */
+@font-face {
+  font-family: 'Roboto Mono ASCII';
+  src: url('./fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* For the glowing text effect */
 .text-glow {
   text-shadow: 0 0 6px hsl(var(--primary) / 0.8);
+}
+
+.ascii {
+  font-family: 'Roboto Mono ASCII', monospace !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
 }
 
 /* Custom scrollbar for terminal aesthetic */
