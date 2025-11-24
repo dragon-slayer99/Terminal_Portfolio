@@ -229,10 +229,3 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For questions or feedback, please use the contact form in the portfolio or reach out through the social links.
 
----
-
-<div align="center">
-
-**99% vide coded with AI**
-
-</div>
